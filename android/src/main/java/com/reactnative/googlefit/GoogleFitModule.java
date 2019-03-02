@@ -81,6 +81,16 @@ public class GoogleFitModule extends ReactContextBaseJavaModule implements Lifec
         }
         mGoogleFitManager.authorize();
     }
+    
+    @ReactMethod
+    public boolean isAuthorized() {
+
+        if (mGoogleFitManager != null && mGoogleFitManager.isAuthorized() ) {
+            return true
+        }
+        
+        return false
+    }
 
     @ReactMethod
     public void disconnect() {
